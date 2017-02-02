@@ -14,6 +14,10 @@ router.get('/rosterSearch', function(req, res, next) {
 	res.render('rosterSearch', {title: 'Roster Search'})
 });
 
+router.post('/addUpdateRoster', function(req, res, next) {
+	var addName = req.body.addName;
+});
+
 router.post('/studentSearch', function(req, res, next) {
 	var searchString = req.body.studentSearch;
 	request.get(queryUrl, (error, response, searchData)=>{
