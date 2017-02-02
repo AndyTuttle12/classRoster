@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	h1.text-center= title
+	p.text-center Welcome to the #{title}
+
+	div.container.text-center
+		div.row
+			form(class="form-inline" action="/studentSearch" method="post")
+				div.form-group
+					label Search for your name here.
+					input(type="text" class="form-control" placeholder="Name" name="studentSearch")
+				input(type="submit" value="Search" class="btn btn-primary")
+
+		div.row
+			h2 Update the class roster here!
+			form(class="form-group" action="/" method="get")
+				p Input student names below separated by commas.
+				textarea(type="text" class="form-control" style="width: 40%; display: block; margin:auto; height:7em;" placeholder="Students" name="rosterUpdate")
+				input(type="submit" value="Add Students" class="btn btn-primary")
+			form(class="form-inline" action="/rosterSearch" method="post")
+				div.form-group
+					label Search for your name in the new roster here.
+					input(type="text" class="form-control" placeholder="Name" name="rosterSearch")
+				input(type="submit" value="Search" class="btn btn-primary")
+
+		
